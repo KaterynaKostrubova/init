@@ -1,0 +1,4 @@
+# nslookup 10.51.1.81 | grep "81.1.51.10" | cut -d " " -f3
+
+ldap-proxy.42.fr
+

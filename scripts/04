@@ -1,0 +1,13 @@
+# script which monitors the modifications:
+
+MD1='cat /root/crontabsum'
+MD2='md5sum /etc/crontab | cut -d " " -f 1'
+
+if [ "$MD1" != "$MD2" ]
+then
+	md5sum /etc/crontab | cut -d " " -f 1 > /root/crontabsum
+	mail -s "Modified" root@localhost.com < /etc/crontab
+fi
+
+# a scheduled task to run this script everyday at midnight (add to /etc/crontab):
+# 0 0 0 * 0-6   root    sh /root/check_md5sum.sh

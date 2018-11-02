@@ -1,0 +1,8 @@
+# First: query an external DNS server on the slash16.org domain name
+nslookup slash16.org
+
+# and next find the provider of slash16.org
+ whois 52.222.149.139
+ 
+# result: Amazon.com
+
